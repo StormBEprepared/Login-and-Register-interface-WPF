@@ -1,0 +1,225 @@
+﻿<Window x:Class="UserLoginRegister.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserLoginRegister"
+        xmlns:extensions="clr-namespace:UserLoginRegister.Core"
+        xmlns:viewmodel="clr-namespace:UserLoginRegister.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStyle="None"
+        WindowState="Normal"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="CanResize"
+        MaxHeight="650"
+        MaxWidth="1000">
+    <Window.DataContext>
+        <viewmodel:MainViewModel/>
+    </Window.DataContext>
+
+    <DockPanel Background="#FF50208A"
+               Margin="7">
+        <Border Height="35"
+                Background="#FF2A005E"
+                DockPanel.Dock="Top">
+            <Border.Style>
+                <Style>
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="(Border.Height)"
+                                                     To="55"
+                                                     Duration="0:0:.1">
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="Border.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="(Border.Height)"
+                                                     To="35"
+                                                     Duration="0:0:.1">
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <Border.InputBindings>
+                <MouseBinding MouseAction="LeftClick"
+                              Command="{Binding MoveWindowCommand}"/>
+            </Border.InputBindings>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50">
+                        <!--Logo-->
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="170">
+                        <!--Motto-->
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="140">
+                        <!--Button1-->
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="140">
+                        <!--Button1-->
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="140">
+                        <!--Button1-->
+                    </ColumnDefinition>
+                    <ColumnDefinition>
+                        <!--Animated GIF?-->
+
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="90">
+                        <!--WindowControlButtons-->
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Stefan Pintea"
+                           Grid.Column="1"
+                           Foreground="White"
+                           FontFamily="Arial"
+                           FontSize="20"
+                           FontWeight="ExtraBold"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Margin="0,0,0,0"/>
+                <RadioButton Content="1stButton"
+                             extensions:Extensions.Icon="&#9889;"
+                             Grid.Column="2"
+                             Padding="6.5,8.5,8,0"
+                             FontSize="15"
+                             FontWeight="Normal"
+                             Foreground="Snow"
+                             IsChecked="False"
+                             Command="{Binding ShowLoginView}"/>
+                <RadioButton Content="2ndButton"
+                             extensions:Extensions.Icon="&#9885;"
+                             Grid.Column="3"
+                             Padding="6.5,8.5,8,0"
+                             FontSize="15"
+                             FontWeight="Normal"
+                             Foreground="Snow"
+                             IsChecked="False"
+                             Command="{Binding ShowRegisterView}"/>
+                <RadioButton Content="3rdButton"
+                             extensions:Extensions.Icon="&#9917;"
+                             Grid.Column="4"
+                             Padding="6.5,8.5,8,0"
+                             FontSize="15"
+                             FontWeight="Normal"
+                             Foreground="Snow"
+                             IsChecked="False"
+                             Command="{Binding ShowPlayerView}"/>
+                <StackPanel Grid.Column="6"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="0,0,4,0">
+                    <Button Content="-" FontSize="20"
+                            Command="{Binding MinimizeWindowCommand}"
+                            Padding="0,0,0,-5"/>
+                    <Button Content="▢" FontSize="13" FontWeight="Bold"
+                            Command="{Binding MaximizeWindowCommand}"
+                            Padding="0,0,0,-1"/>
+                    <Button Content="X" FontSize="14"
+                            Command="{Binding ShutDownWindowCommand}"
+                            Padding="0,0,0,0"/>
+
+                </StackPanel>
+                <Image Grid.Column="5" RenderTransformOrigin="0.5,0.5" Source="/MVVM/View/93533501-53aa0d80-f943-11ea-90d1-e6e70eca2e29.gif"/>
+
+            </Grid>
+        </Border>
+        <Border Width="100"
+                HorizontalAlignment="Right">
+            <Border.Background>
+                <ImageBrush ImageSource="/MVVM/View/tumblr_n7c18lt7NP1svri1bo1_400.gif"/>
+            </Border.Background>
+           
+            <Border.Style>
+                <Style>
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="(Border.Width)"
+                                                     To="150"
+                                                     Duration="0:0:.1">
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="Border.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="(Border.Width)"
+                                                     To="100"
+                                                     Duration="0:0:.1">
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+
+        </Border>
+        <!--
+        <Border Width="80"
+                Background="#FF2A005E"
+                HorizontalAlignment="Right">
+            <Border.Style>
+                <Style>
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="(Border.Width)"
+                                                     To="150"
+                                                     Duration="0:0:.1">
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="Border.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="(Border.Width)"
+                                                     To="80"
+                                                     Duration="0:0:.1">
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <StackPanel>
+                <RadioButton Content="1stButton"
+                             extensions:Extensions.Icon="&#127852;"
+                             Padding="6.5,8.5,8,0"
+                             FontSize="15"
+                             FontWeight="Normal"
+                             Foreground="Snow"
+                             IsChecked="False"
+                             Command="{Binding ShowLoginView}"/>
+                <RadioButton Content="2ndButton"
+                             extensions:Extensions.Icon="&#127852;"
+                             Padding="6.5,8.5,8,0"
+                             FontSize="15"
+                             FontWeight="Normal"
+                             Foreground="Snow"
+                             IsChecked="False"
+                             Command="{Binding ShowRegisterView}"/>
+            </StackPanel>
+        </Border>-->
+        <ContentPresenter Content="{Binding CurrentView}"/>
+    </DockPanel>
+</Window>

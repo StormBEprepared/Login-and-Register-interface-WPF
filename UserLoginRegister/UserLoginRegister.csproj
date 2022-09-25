@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="MVVM\View\93533501-53aa0d80-f943-11ea-90d1-e6e70eca2e29.gif" />
+    <None Remove="MVVM\View\9b7c05edaf95a1b893bf4e303d7f0f9f.jpg" />
+    <None Remove="MVVM\View\giphy.gif" />
+    <None Remove="MVVM\View\tumblr_n7c18lt7NP1svri1bo1_400.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MVVM\Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="MVVM\View\93533501-53aa0d80-f943-11ea-90d1-e6e70eca2e29.gif" />
+    <Resource Include="MVVM\View\9b7c05edaf95a1b893bf4e303d7f0f9f.jpg" />
+    <Resource Include="MVVM\View\giphy.gif" />
+    <Resource Include="MVVM\View\tumblr_n7c18lt7NP1svri1bo1_400.gif" />
+  </ItemGroup>
+
+</Project>
